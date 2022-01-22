@@ -1,0 +1,152 @@
+<div class="preloader">
+    <div class="wrap-pre"></div>
+       <div class="tp1">ЖК</div>
+       <div class="tp2">
+           <span>"Морской бриз"</span>
+       
+   </div>
+</div> 
+
+<style>
+  /****************************preload**************************/
+
+.preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color:#000;
+  text-align: center;
+  z-index: 999999;
+}
+.loaded_hiding .preloader {
+  transition: 0.5s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  transition: 0.9s opacity;
+  opacity: 0;
+  display: none;
+ }
+.title-load {
+  position: absolute;
+  top: 20%;
+  left: -700px;
+}
+
+.tp1,
+.tp2 {
+  position: absolute;
+  width: 50%;
+  height: 500px;
+  padding-top: 20px;
+  top: 50%;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+  font-size: 60px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.tp1 {
+ 
+  left: 11%;
+}
+.tp2 {
+  
+  left: 33%;
+}
+ .tp1 {
+ 	animation: showup 4s ease ;
+}
+.tp1:last-of-type,
+.tp2:last-of-type {
+	width: 755px;
+	animation: reveal 4s ease;
+}
+.tp2:last-of-type span {
+	animation: slidein 4s ease ;
+}
+@keyframes showup {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slidein {
+	0% {
+    opacity: 0;
+		margin-left: -800px;
+	}
+	100% {
+    opacity: 1;
+		margin-left: 0;
+	}
+}
+
+@keyframes reveal {
+	0% {
+		opacity: 0;
+		width: 0;
+  }
+	100% {
+		opacity: 1;
+		width: 755px;
+	}
+}
+
+.wrap-pre {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 80px auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  animation: wrap-pre-spin 2s linear infinite;
+}
+.wrap-pre:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #BFE2FF;
+  animation: wrap-pre-spin 3s linear infinite;
+}
+.wrap-pre:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  animation: wrap-pre-spin 1.5s linear infinite;
+}
+@keyframes wrap-pre-spin {
+  0%   {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}  
+</style>
+
+<script>
+     window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      $('.title-load').addClass()
+      document.body.classList.remove('loaded_hiding');
+    }, 5000);
+</script>
